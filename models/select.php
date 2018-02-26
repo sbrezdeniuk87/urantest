@@ -32,7 +32,7 @@ class Select extends ConnectDB {
 	}
 
 	function getSearch($like){
-		$query = "SELECT * FROM $this->tabname WHERE name LIKE '$like%';";
+		$query = "SELECT * FROM $this->tabname WHERE name LIKE '%$like%';";
 		if($sql = mysql_query($query)){
 			for($i = 0; $i<mysql_num_rows($sql); $i++){
 				$data[$i] = mysql_fetch_array($sql);
